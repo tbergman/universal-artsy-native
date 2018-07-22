@@ -12,6 +12,9 @@ import {
 } from 'react-navigation-material-bottom-tabs';
 import { capitalize } from 'lodash';
 
+import HomeScene from "../src/lib/Scenes/Home"
+// '/src/lib/Scenes/Home/index.tsx'
+
 import AuthenticationScreen from '../screens/AuthenticationScreen';
 import BreweryDetailsScreen from '../screens/BreweryDetailsScreen';
 import BreweryListScreen from '../screens/BreweryListScreen';
@@ -72,6 +75,9 @@ const createTabNavigator =
 
 export default createTabNavigator(
   {
+    home: {
+      screen: HomeScene,
+    },
     list: {
       screen: ListStack,
     },
