@@ -42,6 +42,9 @@ class App extends React.Component {
       'OpenSans-Light': require('./assets/fonts/OpenSans-Light.ttf'),
       OpenSans: require('./assets/fonts/OpenSans-Regular.ttf'),
       'OpenSans-Bold': require('./assets/fonts/OpenSans-Semibold.ttf'),
+      'AGaramondPro-Regular': require('./assets/fonts/EBGaramond08-Regular.ttf'),
+      'AGaramondPro-Italic': require('./assets/fonts/EBGaramond08-Italic.ttf'),
+      'AvantGardeGothicITC': require('./assets/fonts/texgyreadventor-regular.ttf'),
     });
   };
 
