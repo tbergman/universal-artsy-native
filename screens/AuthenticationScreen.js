@@ -45,7 +45,7 @@ export default class AuthenticationScreen extends React.Component {
 
   _signInWithFacebook = async () => {
     const result = await Facebook.logInWithReadPermissionsAsync(
-      '1615553262072011',
+      '1631572736931264',
       {
         permissions: ['public_profile'],
         behavior: Platform.OS === 'ios' ? 'web' : 'system',

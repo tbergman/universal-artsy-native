@@ -6,8 +6,10 @@ import {
   Header,
   createStackNavigator,
   createBottomTabNavigator,
-  createMaterialBottomTabNavigator,
 } from 'react-navigation';
+import {
+  createMaterialBottomTabNavigator,
+} from 'react-navigation-material-bottom-tabs';
 import { capitalize } from 'lodash';
 
 import AuthenticationScreen from '../screens/AuthenticationScreen';
