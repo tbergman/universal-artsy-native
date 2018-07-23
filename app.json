@@ -10,11 +10,6 @@
     "primaryColor": "#f6bd94",
     "privacy": "unlisted",
     "icon": "./icon.png",
-    "splash": {
-      "backgroundColor": "#f6bd94",
-      "image": "./splash.png",
-      "resizeMode": "contain"
-    },
     "android": {
       "icon": "./icon-android.png",
       "package": "adm.tbergman.artsyexpo",
