@@ -128,5 +128,6 @@ export default createTabNavigator(
       activeTintColor: Colors.tabIconSelected,
       inactiveTintColor: Colors.tabIconDefault,
     },
+    barStyle: { backgroundColor: 'white'}
   }
 );
