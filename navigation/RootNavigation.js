@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, Image } from 'react-native';
 import { Constants } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import {
@@ -97,33 +97,66 @@ export default createTabNavigator(
       }
       return {
         tabBarLabel,
+        // tabBarIcon: () => {
+          // return (<Image
+          //     style={{ width: 90, height: 90 }}
+          //     // source={{ uri: "https://facebook.github.io/react/img/logo_og.png" }}
+          //     source={require('../images/navigation/nav_home.png')}
+          //     // '/Users/tbergman/React-Native/Projects/Expo/growler-prowler/images/navigation/nav_home@3x.png'
+          //     />);}
+        // tabBarIcon: <Image
+        //       style={{ width: 90, height: 90 }}
+        //       // source={require('/growler-prowler/images/navigation/nav_home@3x.png')}
+        //       // source={require("../../../../../images/whitespinner.png")}
+        //       source={require("../images/whitespinner.png")}
+        //     />
         tabBarIcon: ({ focused }) => {
-          const { routeName } = navigation.state;
-          let iconName;
-          switch (routeName) {
-            case 'list':
-              iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
-              break;
-            case 'map':
-              iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
-              break;
-            case 'settings':
-              iconName =
-                Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
-          }
+          // const { routeName } = navigation.state;
+          // let iconName;
+          // let imageSrc '';
+          // switch (routeName) {
+          //   case 'home':
+          //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
+          //     // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
+          //     imageSrc = '../images/navigation/nav_home.png';
+          //     break;
+          //   case 'list':
+          //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
+          //     // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
+          //     imageSrc = '../images/navigation/nav_home.png';
+          //     break;
+          //   case 'map':
+          //     // iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
+          //     imageSrc = '../images/navigation/nav_home.png';
+          //     break;
+          //   case 'settings':
+          //     // iconName =
+          //     //   Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
+          //     imageSrc = '../images/navigation/nav_home.png';
+          // }
+          // return (
+          //   <Ionicons
+          //     name={iconName}
+          //     size={30}
+          //     style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
+          //     color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+          //   />
+          // );
           return (
-            <Ionicons
-              name={iconName}
-              size={30}
-              style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
-              color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+            <Image
+              style={{ width: 90, height: 90 }}
+              // source={require('/growler-prowler/images/navigation/nav_home@3x.png')}
+              // source={require("../../../../../images/whitespinner.png")}
+              source={require('../images/navigation/nav_home.png')}
+              // source={require(imageSrc)}
             />
-          );
+          )
         },
       };
     },
     activeTintColor: Colors.tabIconSelected,
-    inactiveTintColor: Colors.tabIconDefault,
+    // inactiveTintColor: Colors.tabIconDefault,
+    inactiveTintColor: 'red',
     tabBarOptions: {
       activeTintColor: Colors.tabIconSelected,
       inactiveTintColor: Colors.tabIconDefault,
