@@ -1,7 +1,7 @@
 import React from 'react';
-import { Platform, Image } from 'react-native';
+import { Platform, Image, View } from 'react-native';
 import { Constants } from 'expo';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Foundation, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import {
   Header,
   createStackNavigator,
@@ -121,51 +121,77 @@ export default createTabNavigator(
           // let imageSrc
           switch (routeName) {
             case 'home': {
-              return (
-                <Image
-                  style={{ width: 40, height: 40 }}
-                  source={Images.navHomeIcon}
-                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-                />
-              )
+              // Foundation
+              // iconName = 'home';
+
+              iconName = Platform.OS === 'ios' ? 'ios-home-outline' : 'md-home';
+              break;
+              // return (
+              //   <Image
+              //     style={{ width: 40, height: 40 }}
+              //     source={Images.navHomeIcon}
+              //     // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+              //   />
+              // )
             }
             case 'list': {
+              iconName = Platform.OS === 'ios' ? 'ios-search-outline' : 'md-search';
+              break;
               // imageSrc = Images.navSearchIcon;
-              return (
-                <Image
-                  style={{ width: 30, height: 30 }}
-                  source={Images.navSearchIcon}
-                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-                />
-              )
+              // return (
+              //   <Image
+              //     style={{ width: 30, height: 30 }}
+              //     source={Images.navSearchIcon}
+              //     // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+              //   />
+              // )
             }
             case 'map': {
+              iconName = 'message-processing'
+              // return (
+              //   <Image
+              //     style={{ width: 30, height: 30 }}
+              //     source={Images.navMessageingIcon}
+              //     // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+              //   />
+              // )
               return (
-                <Image
-                  style={{ width: 30, height: 30 }}
-                  source={Images.navMessageingIcon}
-                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+                <MaterialCommunityIcons
+                  name={iconName}
+                  size={30}
+                  style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
+                  color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
             case 'settings': {
-              return (
-                <Image
-                  style={{ width: 30, height: 30 }}
-                  source={Images.navFavoritesIcon}
-                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-                />
-              )
+              iconName = Platform.OS === 'ios' ? 'ios-heart-outline' : 'md-heart-outline';
+              break;
+              // return (
+              //   <Image
+              //     style={{ width: 30, height: 30 }}
+              //     source={Images.navFavoritesIcon}
+              //     // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+              //   />
+              // )
             }
           }
           // return (
-          //   <Ionicons
+          //   <Foundation
           //     name={iconName}
           //     size={30}
           //     style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
           //     color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
           //   />
           // );
+          return (
+            <Ionicons
+              name={iconName}
+              size={30}
+              style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
+              color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+            />
+          );
           // return (
           //   <Image
           //     style={{ width: 90, height: 90 }}
@@ -181,15 +207,32 @@ export default createTabNavigator(
     activeTintColor: Colors.tabIconSelected,
     inactiveTintColor: Colors.tabIconDefault,
     // style: { width: 40, height: 40, backgroundColor: 'blue'},
-    // tabStyle: { width: 40, height: 40, backgroundColor: '#000'},
+    tabStyle: { width: 40, height: 40, backgroundColor: 'red'},
     // showLabel: false,
     // showIcon: false,
     // inactiveTintColor: 'red',
+    // tabBarComponent: <View style={{ backgroundColor: 'red'}}></View>,
+    // tabBarButtonComponent: <View style={{ backgroundColor: 'red'}}></View>,
     tabBarOptions: {
       activeTintColor: Colors.tabIconSelected,
       inactiveTintColor: Colors.tabIconDefault,
       // style: { width: 40, height: 40, backgroundColor: 'blue'},
       // tabStyle: { width: 40, height: 40, backgroundColor: 'blue'},
+      // iconStyle: {
+      //   width: 45,
+      //   height: 45
+      // },
+      //   showLabel: false,
+      //   showIcon: false,
+      //   style: {
+      //     backgroundColor: 'red',
+      //     borderTopColor: 'white',
+      //     borderTopWidth: 1,
+      //     height: (Platform.OS === 'ios') ? 48 : 90,
+      //     width:100/2
+      //   },
+      //   tabStyle: { width: 40, height: 40, backgroundColor: 'red'},
+        
       // tabBarIcon: { width: 40, height: 40, }
     },
     barStyle: { backgroundColor: 'white'}
