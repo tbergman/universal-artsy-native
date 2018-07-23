@@ -91,12 +91,17 @@ export default createTabNavigator(
   {
     navigationOptions: ({ navigation }) => {
       let { routeName } = navigation.state;
-      let tabBarLabel = capitalize(routeName);
-      if (tabBarLabel === 'List') {
-        tabBarLabel = 'Brewery List';
-      }
+      // let tabBarLabel = capitalize(routeName);
+      // if (tabBarLabel === 'List') {
+      //   tabBarLabel = 'Brewery List';
+      // }
       return {
-        tabBarLabel,
+        // showLabel: false,
+        // showIcon: false,
+        // tabBarVisible: false,
+        title: '',
+        
+        // tabBarLabel,
         // tabBarIcon: () => {
           // return (<Image
           //     style={{ width: 90, height: 90 }}
@@ -118,7 +123,7 @@ export default createTabNavigator(
             case 'home': {
               return (
                 <Image
-                  style={{ width: 30, height: 30 }}
+                  style={{ width: 40, height: 40 }}
                   source={Images.navHomeIcon}
                   // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
@@ -175,10 +180,17 @@ export default createTabNavigator(
     },
     activeTintColor: Colors.tabIconSelected,
     inactiveTintColor: Colors.tabIconDefault,
+    // style: { width: 40, height: 40, backgroundColor: 'blue'},
+    // tabStyle: { width: 40, height: 40, backgroundColor: '#000'},
+    // showLabel: false,
+    // showIcon: false,
     // inactiveTintColor: 'red',
     tabBarOptions: {
       activeTintColor: Colors.tabIconSelected,
       inactiveTintColor: Colors.tabIconDefault,
+      // style: { width: 40, height: 40, backgroundColor: 'blue'},
+      // tabStyle: { width: 40, height: 40, backgroundColor: 'blue'},
+      // tabBarIcon: { width: 40, height: 40, }
     },
     barStyle: { backgroundColor: 'white'}
   }
