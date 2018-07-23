@@ -112,46 +112,58 @@ export default createTabNavigator(
         //     />
         tabBarIcon: ({ focused }) => {
           const { routeName } = navigation.state;
-          let iconName;
-          let imageSrc = './images/navigation/nav_home.png'
+          // let iconName
+          // let imageSrc
           switch (routeName) {
-            case 'home':
-              iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
-            //   // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
-              imageSrc = './images/navigation/nav_home.png';
-              break;
-            case 'list':
-              iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
-              // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
-              imageSrc = './images/navigation/nav_search.png';
-              break;
-            case 'map':
-              iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
-              imageSrc = './images/navigation/nav_messaging.png';
-              break;
-            // case 'settings':
-            //   // iconName =
-            //   //   Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
-              imageSrc = './images/navigation/nav_favs.png';
-              break;
-            // default:
-            //   break;
+            case 'home': {
+              return (
+                <Image
+                  style={{ width: 90, height: 90 }}
+                  source={Images.navHomeIcon}
+                />
+              )
+            }
+            case 'list': {
+              // imageSrc = Images.navSearchIcon;
+              return (
+                <Image
+                  style={{ width: 90, height: 90 }}
+                  source={Images.navSearchIcon}
+                />
+              )
+            }
+            case 'map': {
+              return (
+                <Image
+                  style={{ width: 90, height: 90 }}
+                  source={Images.navMessageingIcon}
+                />
+              )
+            }
+            case 'settings': {
+              return (
+                <Image
+                  style={{ width: 90, height: 90 }}
+                  source={Images.navFavoritesIcon}
+                />
+              )
+            }
           }
-          return (
-            <Ionicons
-              name={iconName}
-              size={30}
-              style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
-              color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-            />
-          );
+          // return (
+          //   <Ionicons
+          //     name={iconName}
+          //     size={30}
+          //     style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
+          //     color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+          //   />
+          // );
           // return (
           //   <Image
           //     style={{ width: 90, height: 90 }}
           //     // source={require('/growler-prowler/images/navigation/nav_home@3x.png')}
           //     // source={require("../../../../../images/whitespinner.png")}
           //     // source={require('../images/navigation/nav_home.png')}
-          //     source={require('../images/navigation/nav_favs.png'}) }
+          //     source={imageSrc) }
           //   />
           // )
         },
