@@ -1,0 +1,8 @@
+const images = {
+	navHomeIcon: require('./images/navigation/nav_home.png'),
+	navSearchIcon: require('./images/navigation/nav_search.png'),
+	navMessageingIcon: require('./images/navigation/nav_messaging.png'),
+	navFavoritesIcon: require('./images/navigation/nav_favs.png'),
+};
+
+export default images;
