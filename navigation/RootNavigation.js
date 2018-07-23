@@ -113,7 +113,7 @@ export default createTabNavigator(
         tabBarIcon: ({ focused }) => {
           // const { routeName } = navigation.state;
           // let iconName;
-          // let imageSrc '';
+          let imageSrc = '../images/navigation/nav_home.png';
           // switch (routeName) {
           //   case 'home':
           //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
@@ -123,16 +123,20 @@ export default createTabNavigator(
           //   case 'list':
           //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
           //     // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
-          //     imageSrc = '../images/navigation/nav_home.png';
+          //     imageSrc = '../images/navigation/nav_search.png';
           //     break;
           //   case 'map':
           //     // iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
-          //     imageSrc = '../images/navigation/nav_home.png';
+          //     imageSrc = '../images/navigation/nav_messaging.png';
           //     break;
           //   case 'settings':
           //     // iconName =
           //     //   Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
+          //     imageSrc = '../images/navigation/nav_favs.png';
+          //     break;
+          //   default:
           //     imageSrc = '../images/navigation/nav_home.png';
+
           // }
           // return (
           //   <Ionicons
@@ -147,8 +151,8 @@ export default createTabNavigator(
               style={{ width: 90, height: 90 }}
               // source={require('/growler-prowler/images/navigation/nav_home@3x.png')}
               // source={require("../../../../../images/whitespinner.png")}
-              source={require('../images/navigation/nav_home.png')}
-              // source={require(imageSrc)}
+              // source={require('../images/navigation/nav_home.png')}
+              source={require(imageSrc)}
             />
           )
         },
