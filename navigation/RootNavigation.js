@@ -111,33 +111,36 @@ export default createTabNavigator(
         //       source={require("../images/whitespinner.png")}
         //     />
         tabBarIcon: ({ focused }) => {
-          // const { routeName } = navigation.state;
+          const { routeName } = navigation.state;
           // let iconName;
           let imageSrc = '../images/navigation/nav_home.png';
-          // switch (routeName) {
-          //   case 'home':
-          //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
-          //     // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
-          //     imageSrc = '../images/navigation/nav_home.png';
-          //     break;
-          //   case 'list':
-          //     // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
-          //     // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
-          //     imageSrc = '../images/navigation/nav_search.png';
-          //     break;
-          //   case 'map':
-          //     // iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
-          //     imageSrc = '../images/navigation/nav_messaging.png';
-          //     break;
-          //   case 'settings':
-          //     // iconName =
-          //     //   Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
-          //     imageSrc = '../images/navigation/nav_favs.png';
-          //     break;
-          //   default:
-          //     imageSrc = '../images/navigation/nav_home.png';
-
-          // }
+          switch (routeName) {
+            case 'home': {
+              // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
+              // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
+              let imageSrc = '../images/navigation/nav_home.png';
+              break;
+            }
+            case 'list': {
+              // iconName = Platform.OS === 'ios' ? 'ios-list' : 'md-list';
+              // imageSrc = '/growler-prowler/images/navigation/nav_home@3x.png';
+              let imageSrc = '../images/navigation/nav_search.png';
+              break;
+            }
+            case 'map': {
+              // iconName = Platform.OS === 'ios' ? 'ios-map-outline' : 'md-map';
+              let imageSrc = '../images/navigation/nav_messaging.png';
+              break;
+            }
+            case 'settings': {
+              // iconName =
+              //   Platform.OS === 'ios' ? 'ios-options-outline' : 'md-options';
+              let imageSrc = '../images/navigation/nav_favs.png';
+              break;
+            }
+            default:
+              break;
+          }
           // return (
           //   <Ionicons
           //     name={iconName}
