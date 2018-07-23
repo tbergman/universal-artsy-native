@@ -118,8 +118,9 @@ export default createTabNavigator(
             case 'home': {
               return (
                 <Image
-                  style={{ width: 90, height: 90 }}
+                  style={{ width: 30, height: 30 }}
                   source={Images.navHomeIcon}
+                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
@@ -127,24 +128,27 @@ export default createTabNavigator(
               // imageSrc = Images.navSearchIcon;
               return (
                 <Image
-                  style={{ width: 90, height: 90 }}
+                  style={{ width: 30, height: 30 }}
                   source={Images.navSearchIcon}
+                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
             case 'map': {
               return (
                 <Image
-                  style={{ width: 90, height: 90 }}
+                  style={{ width: 30, height: 30 }}
                   source={Images.navMessageingIcon}
+                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
             case 'settings': {
               return (
                 <Image
-                  style={{ width: 90, height: 90 }}
+                  style={{ width: 30, height: 30 }}
                   source={Images.navFavoritesIcon}
+                  // color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
@@ -170,8 +174,8 @@ export default createTabNavigator(
       };
     },
     activeTintColor: Colors.tabIconSelected,
-    // inactiveTintColor: Colors.tabIconDefault,
-    inactiveTintColor: 'red',
+    inactiveTintColor: Colors.tabIconDefault,
+    // inactiveTintColor: 'red',
     tabBarOptions: {
       activeTintColor: Colors.tabIconSelected,
       inactiveTintColor: Colors.tabIconDefault,
