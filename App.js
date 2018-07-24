@@ -44,7 +44,7 @@ class App extends React.Component {
       'OpenSans-Bold': require('./assets/fonts/OpenSans-Semibold.ttf'),
       'AGaramondPro-Regular': require('./assets/fonts/EBGaramond08-Regular.ttf'),
       'AGaramondPro-Italic': require('./assets/fonts/EBGaramond08-Italic.ttf'),
-      'AvantGardeGothicITC': require('./assets/fonts/texgyreadventor-regular.ttf'),
+      'AvantGardeGothicITC': require('./assets/fonts/texgyreadventor-regular.ttf'), 
     });
   };
 
@@ -100,5 +100,7 @@ function isSignedIn(userState) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // TEMP for testing
+    // paddingBottom: 100,
   },
 });

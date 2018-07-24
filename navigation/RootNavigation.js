@@ -106,10 +106,12 @@ export default createTabNavigator(
               return (
                 <MaterialIcons
                   style={{ backgroundColor: 'transparent',
-                  transform: [{rotateY: '180deg'}]
+                  transform: [{rotateY: '180deg'}],
+                  marginBottom: Platform.OS === 'ios' ? -3 : 0,
                   }}
                   name={iconName}
                   size={24}
+                  color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
                 />
               )
             }
@@ -124,9 +126,10 @@ export default createTabNavigator(
           }
           return(
             <MaterialCommunityIcons
-              style={{ backgroundColor: 'transparent' }}
+              style={{ backgroundColor: 'transparent', marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
               name={iconName}
               size={24}
+              color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
             />
           )
         },
