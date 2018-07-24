@@ -1,6 +1,6 @@
 import { AppLoading, Font } from 'expo';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, AsyncStorage } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Provider as ReduxProvider, connect } from 'react-redux';
 import { List } from 'immutable';
@@ -35,6 +35,10 @@ class App extends React.Component {
   state = {
     isReady: false,
   };
+
+  componentDidMount(){
+    AsyncStorage.clear();
+  }
 
   _loadAssetsAsync = async () => {
     return Font.loadAsync({

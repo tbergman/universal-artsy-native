@@ -13,6 +13,7 @@ import {
 import { capitalize } from 'lodash';
 import Images from '@assets/images';
 import HomeScene from "../src/lib/Scenes/Home"
+import FavoritesScene from "../src/lib/Scenes/Favorites"
 // '/src/lib/Scenes/Home/index.tsx'
 
 import AuthenticationScreen from '../screens/AuthenticationScreen';
@@ -21,7 +22,7 @@ import BreweryListScreen from '../screens/BreweryListScreen';
 import BreweryMapScreen from '../screens/BreweryMapScreen';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
-import SettingsScreen from '../screens/SettingsScreen';
+// import SettingsScreen from '../screens/SettingsScreen';
 
 const ListStack = createStackNavigator(
   {
@@ -40,7 +41,7 @@ const ListStack = createStackNavigator(
   }
 );
 
-const SettingsStack = createStackNavigator(
+/* const SettingsStack = createStackNavigator(
   {
     mainSettings: {
       screen: SettingsScreen,
@@ -66,7 +67,7 @@ const SettingsStack = createStackNavigator(
       },
     },
   }
-);
+); */
 
 const createTabNavigator =
   Platform.OS === 'ios'
@@ -84,8 +85,8 @@ export default createTabNavigator(
     map: {
       screen: BreweryMapScreen,
     },
-    settings: {
-      screen: SettingsStack,
+    favorites: {
+      screen: FavoritesScene,
     },
   },
   {
@@ -119,7 +120,7 @@ export default createTabNavigator(
               iconName = 'message-text-outline'
               break;
             }
-            case 'settings': {
+            case 'favorites': {
               iconName = 'heart-outline'
               break;
             }
