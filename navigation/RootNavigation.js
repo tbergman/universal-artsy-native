@@ -98,46 +98,42 @@ export default createTabNavigator(
           let iconName
           switch (routeName) {
             case 'home': {
-              iconName = Platform.OS === 'ios' ? 'ios-home-outline' : 'md-home';
+              iconName = 'home-outline'
               break;
             }
             case 'list': {
-              iconName = Platform.OS === 'ios' ? 'ios-search-outline' : 'md-search';
-              break;
-            }
-            case 'map': {
-              iconName = 'message-processing'
+              iconName = 'search'
               return (
-                <MaterialCommunityIcons
+                <MaterialIcons
+                  style={{ backgroundColor: 'transparent'}}
                   name={iconName}
-                  size={30}
-                  style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
-                  color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+                  size={24}
                 />
               )
             }
+            case 'map': {
+              iconName = 'message-processing'
+              break;
+            }
             case 'settings': {
-              iconName = Platform.OS === 'ios' ? 'ios-heart-outline' : 'md-heart-outline';
+              iconName = 'heart-outline'
               break;
             }
           }
-          return (
-            <Ionicons
+          return(
+            <MaterialCommunityIcons
+              style={{ backgroundColor: 'transparent' }}
               name={iconName}
-              size={30}
-              style={{ marginBottom: Platform.OS === 'ios' ? -3 : 0 }}
-              color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+              size={24}
             />
-          );
+          )
         },
       };
     },
+    shifting: false,
+    labeled: false,
     activeTintColor: Colors.tabIconSelected,
     inactiveTintColor: Colors.tabIconDefault,
-    tabBarOptions: {
-      activeTintColor: Colors.tabIconSelected,
-      inactiveTintColor: Colors.tabIconDefault,
-    },
     barStyle: { backgroundColor: 'white'}
   }
 );
