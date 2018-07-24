@@ -114,7 +114,7 @@ export default createTabNavigator(
               )
             }
             case 'map': {
-              iconName = 'message-processing'
+              iconName = 'message-text-outline'
               break;
             }
             case 'settings': {
