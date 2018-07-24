@@ -105,7 +105,9 @@ export default createTabNavigator(
               iconName = 'search'
               return (
                 <MaterialIcons
-                  style={{ backgroundColor: 'transparent'}}
+                  style={{ backgroundColor: 'transparent',
+                  transform: [{rotateY: '180deg'}]
+                  }}
                   name={iconName}
                   size={24}
                 />
