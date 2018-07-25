@@ -12,14 +12,14 @@ import DarkNavigationButton from "lib/Components/Buttons/DarkNavigationButton"
 import { Fonts } from "lib/data/fonts"
 
 import Artists from "./Components/Artists"
-// import ArtistsRenderer from "./Components/Artists/Relay/FavoriteArtists"
+import ArtistsRenderer from "./Components/Artists/Relay/FavoriteArtists"
 
 import Artworks from "./Components/Artworks"
-// import ArtworksRenderer from "./Components/Artworks/Relay/FavoriteArtworks"
+import ArtworksRenderer from "./Components/Artworks/Relay/FavoriteArtworks"
 
-import {
-  ArtworksRenderer, ArtistsRenderer
-} from "../../relay/QueryRenderers"
+// import {
+//   ArtworksRenderer, ArtistsRenderer
+// } from "../../relay/QueryRenderers"
 
 import Categories from "./Components/Categories"
 import CategoriesRenderer from "./Components/Categories/Relay/FavoriteCategories"
