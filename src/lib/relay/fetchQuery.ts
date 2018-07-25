@@ -18,7 +18,7 @@ export const fetchQuery: FetchFunction = (operation, variables, cacheConfig, _up
   // }
   // else {
   // return _fetchQuery(queryID, variables, isQuery)
-  return _fetchQuery(queryID, { selectedArtist: "rodney-graham" }, isQuery)
+  return _fetchQuery(queryID, variables, isQuery)
   // }
 }
 

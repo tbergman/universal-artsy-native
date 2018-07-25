@@ -28,6 +28,11 @@ MyProfile
 
 import Inbox from "../Containers/Inbox"
 Inbox
+
+import SavedWorks from "../Scenes/Favorites/Components/Artworks"
+SavedWorks
+
+
 // tslint:enable:no-unused-expression
 
 import createEnvironment from "./createEnvironment"
@@ -295,6 +300,42 @@ export const InboxRenderer: React.SFC<RendererProps> = ({ render }) => {
         }
       `}
       variables={{}}
+      render={render}
+    />
+  )
+}
+
+export const ArtworksRenderer: React.SFC<RendererProps> =  ({ render }) => {
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={graphql`
+        query QueryRenderersFavoriteArtworksQuery {
+          me {
+            ...Artworks_me
+          }
+        }
+      `}
+      variables={{
+        count: 10,
+      }}
+      render={render}
+    />
+  )
+}
+
+export const ArtistsRenderer: React.SFC<RendererProps> =  ({ render }) => {
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={graphql`
+        query QueryRenderersFavoriteArtistsQuery {
+          me {
+            ...Artists_me
+          }
+        }
+      `}
+      variables={{ count: 10 }}
       render={render}
     />
   )
