@@ -3,6 +3,7 @@ const images = {
 	navSearchIcon: require('./images/navigation/nav_search.png'),
 	navMessageingIcon: require('./images/navigation/nav_messaging.png'),
 	navFavoritesIcon: require('./images/navigation/nav_favs.png'),
+	searchBgimage: require('./images/searchBgimage.jpeg'),
 };
 
 export default images;

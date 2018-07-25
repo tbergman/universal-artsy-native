@@ -23,6 +23,7 @@ import BreweryMapScreen from '../screens/BreweryMapScreen';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
 // import SettingsScreen from '../screens/SettingsScreen';
+import SearchScreen from '../src/lib/Containers/SearchScreen';
 
 const ListStack = createStackNavigator(
   {
