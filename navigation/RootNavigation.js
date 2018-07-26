@@ -17,30 +17,30 @@ import FavoritesScene from "../src/lib/Scenes/Favorites"
 // '/src/lib/Scenes/Home/index.tsx'
 
 import AuthenticationScreen from '../screens/AuthenticationScreen';
-import BreweryDetailsScreen from '../screens/BreweryDetailsScreen';
-import BreweryListScreen from '../screens/BreweryListScreen';
+// import BreweryDetailsScreen from '../screens/BreweryDetailsScreen';
+// import BreweryListScreen from '../screens/BreweryListScreen';
 import BreweryMapScreen from '../screens/BreweryMapScreen';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
 // import SettingsScreen from '../screens/SettingsScreen';
 import SearchScreen from '../src/lib/Containers/SearchScreen';
 
-const ListStack = createStackNavigator(
-  {
-    list: {
-      screen: BreweryListScreen,
-    },
-    details: {
-      screen: BreweryDetailsScreen,
-    },
-  },
-  {
-    headerMode: 'none',
-    cardStyle: {
-      backgroundColor: '#fff',
-    },
-  }
-);
+// const ListStack = createStackNavigator(
+//   {
+//     list: {
+//       screen: BreweryListScreen,
+//     },
+//     details: {
+//       screen: BreweryDetailsScreen,
+//     },
+//   },
+//   {
+//     headerMode: 'none',
+//     cardStyle: {
+//       backgroundColor: '#fff',
+//     },
+//   }
+// );
 
 /* const SettingsStack = createStackNavigator(
   {
@@ -81,7 +81,7 @@ export default createTabNavigator(
       screen: HomeScene,
     },
     list: {
-      screen: ListStack,
+      screen: SearchScreen,
     },
     map: {
       screen: BreweryMapScreen,

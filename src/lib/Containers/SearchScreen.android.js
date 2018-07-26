@@ -1,156 +1,41 @@
-/**
- * Basic [Android] Example for react-native-blur
- * https://github.com/react-native-community/react-native-blur
- */
-'use strict';
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  AppRegistry,
+  Animated,
   Image,
-  findNodeHandle,
   StyleSheet,
-  Text,
   View,
-  Dimensions,
-  Switch,
-  InteractionManager,
 } from 'react-native';
-// import AndroidSegmented from 'react-native-segmented-android';
+import { BlurView } from 'expo';
 
-import { BlurView } from 'react-native-blur';
+const uri = 'https://s3.amazonaws.com/exp-icon-assets/ExpoEmptyManifest_192.png';
 
-const BLUR_TYPES = ['xlight', 'light', 'dark'];
-
-// import Images from '@assets/images';
-
-class Basic extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showBlur: true,
-      viewRef: null,
-      activeSegment: 2,
-      blurType: 'dark',
-    };
+const AnimatedBlurView = Animated.createAnimatedComponent(BlurView);
+export default class BlurViewExample extends React.Component {
+  state = {
+    intensity: new Animated.Value(0),
   }
 
-  imageLoaded() {
-    // Workaround for a tricky race condition on initial load.
-    InteractionManager.runAfterInteractions(() => {
-      setTimeout(() => {
-        this.setState({ viewRef: findNodeHandle(this.refs.backgroundImage) });
-      }, 500);
+  componentDidMount() {
+    this._animate();
+  }
+
+  _animate = () => {
+    let { intensity } = this.state;
+    Animated.timing(intensity, {duration: 2500, toValue: 100}).start(() => {
+      Animated.timing(intensity, {duration: 2500, toValue: 0}).start(this._animate);
     });
-  }
-
-  _onChange(selected) {
-    this.setState({
-      activeSegment: selected,
-      blurType: BLUR_TYPES[selected],
-    });
-  }
-
-  renderBlurView() {
-    const tintColor = ['#ffffff', '#000000'];
-    if (this.state.blurType === 'xlight') tintColor.reverse();
-
-    return (
-      <View style={styles.container}>
-        {this.state.viewRef && <BlurView
-          viewRef={this.state.viewRef}
-          style={styles.blurView}
-
-          blurRadius={9}
-          blurType={this.state.blurType}
-
-          // The following props are also available on Android:
-
-          // blurRadius={20}
-          // downsampleFactor={10}
-          // overlayColor={'rgba(0, 0, 255, .6)'}   // set a blue overlay
-        />}
-
-        <Text style={[styles.text, { color: tintColor[0] }]}>
-          Blur component (Android)
-        </Text>
-
-        {
-          // <AndroidSegmented
-          // tintColor={tintColor}
-          // style={{
-          //   width: Dimensions.get('window').width,
-          //   height: 28,
-          //   justifyContent: 'center',
-          //   alignItems: 'center',
-          // }}
-          // childText={BLUR_TYPES}
-          // orientation='horizontal'
-          // selectedPosition={this.state.activeSegment}
-          // onChange={this._onChange.bind(this)} />
-        }
-      </View>
-    )
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          // source={require('./bgimage.jpeg')}
-          // source={Images.searchBgimage}
-          style={styles.image}
-          ref={'backgroundImage'}
-          onLoadEnd={this.imageLoaded.bind(this)} />
+      <View style={{flex: 1, padding: 50, alignItems: 'center', justifyContent: 'center'}}>
+        <Image style={{width: 180, height: 180}} source={{uri}} />
 
-        { this.state.showBlur ? this.renderBlurView() : null }
-
-        <View
-          style={styles.blurToggle}>
-          <Switch
-            onValueChange={(value) => this.setState({showBlur: value})}
-            value={this.state.showBlur} />
-        </View>
+        <AnimatedBlurView
+          tint="default"
+          intensity={this.state.intensity}
+          style={StyleSheet.absoluteFill} />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  image: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    bottom: 0,
-    right: 0,
-    resizeMode: 'cover',
-    width: null,
-    height: null,
-  },
-  blurView: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    bottom: 0,
-    right: 0,
-  },
-  text: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    margin: 10,
-    color: '#FFFFFF',
-  },
-  blurToggle: {
-    position: 'absolute',
-    top: 30,
-    right: 10,
-    alignItems: 'flex-end',
-  },
-});
-
-AppRegistry.registerComponent('Basic', () => Basic);
