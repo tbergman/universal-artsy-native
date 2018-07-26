@@ -1,41 +1,20 @@
-import React from 'react';
-import {
-  Animated,
-  Image,
-  StyleSheet,
-  View,
-} from 'react-native';
-import { BlurView } from 'expo';
+import * as React from 'react';
+import { Modal, Text } from 'react-native-paper';
 
-const uri = 'https://s3.amazonaws.com/exp-icon-assets/ExpoEmptyManifest_192.png';
-
-const AnimatedBlurView = Animated.createAnimatedComponent(BlurView);
-export default class BlurViewExample extends React.Component {
+export default class MyComponent extends React.Component {
   state = {
-    intensity: new Animated.Value(0),
-  }
+    visible: true,
+  };
 
-  componentDidMount() {
-    this._animate();
-  }
-
-  _animate = () => {
-    let { intensity } = this.state;
-    Animated.timing(intensity, {duration: 2500, toValue: 100}).start(() => {
-      Animated.timing(intensity, {duration: 2500, toValue: 0}).start(this._animate);
-    });
-  }
+  _showModal = () => this.setState({ visible: true });
+  _hideModal = () => this.setState({ visible: false });
 
   render() {
+    const { visible } = this.state;
     return (
-      <View style={{flex: 1, padding: 50, alignItems: 'center', justifyContent: 'center'}}>
-        <Image style={{width: 180, height: 180}} source={{uri}} />
-
-        <AnimatedBlurView
-          tint="default"
-          intensity={this.state.intensity}
-          style={StyleSheet.absoluteFill} />
-      </View>
+      <Modal visible={visible}>
+        <Text>Example Modal</Text>
+      </Modal>
     );
   }
 }
