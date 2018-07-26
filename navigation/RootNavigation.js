@@ -23,7 +23,8 @@ import BreweryMapScreen from '../screens/BreweryMapScreen';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
 // import SettingsScreen from '../screens/SettingsScreen';
-import SearchScreen from '../src/lib/Containers/SearchScreen';
+// import SearchScreen from '../src/lib/Containers/SearchScreen';
+import { BlurView } from 'expo';
 
 const createTabNavigator =
   Platform.OS === 'ios'
@@ -36,7 +37,7 @@ const Tabs = createTabNavigator(
       screen: HomeScene,
     },
     Search: {
-      screen: SearchScreen,
+      screen: View,
     },
     map: {
       screen: BreweryMapScreen,
@@ -122,8 +123,22 @@ const Tabs = createTabNavigator(
 );
 
 const Screen = (props) => (
-  <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center' }}>
-    <Text>{props.title} Screen</Text>
+  <View style={{ flex: 1, backgroundColor: 'transparent', alignItems: 'center', justifyContent: 'center' }}>
+    <BlurView
+      style={{
+          flex: 1,
+          borderRadius: 12,
+          paddingBottom: 20,
+          justifyContent: "center",
+          alignItems: "center",
+          height: 500,
+          width: 500,
+          backgroundColor: 'transparent'
+      }}
+      tint="light" intensity={50}
+    >
+      <Text>{props.title} Screen</Text>
+    </BlurView>
   </View>
 );
 
@@ -164,6 +179,26 @@ const RootStack = createStackNavigator({
 }, {
   headerMode: 'none',
   mode: 'modal',
+  cardStyle: {
+    shadowColor: 'transparent'
+  },
+  // transitionConfig: {
+  //   containerStyle: {
+  //     backgroundColor: 'transparent',
+  //   },
+  // }
+  // transitionConfig: () => {
+  //   return {
+  //     containerStyle: {
+  //       backgroundColor: 'transparent',
+  //     },
+  //   }
+  // },
+  transitionConfig: () => ({
+    containerStyle: {
+        backgroundColor: 'transparent'
+    }
+  }),
 });
 
 export default RootStack;
