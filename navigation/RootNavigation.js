@@ -75,14 +75,43 @@ const createTabNavigator =
     ? createBottomTabNavigator
     : createMaterialBottomTabNavigator;
 
+    // const RootScreen = createBottomTabNavigator({
+    //   explore: ExploreScreen,
+    //   camera:  {
+    //         screen: CameraScreen,
+    //         navigationOptions: ({ navigation }) => ({
+    //             tabBarOnPress: ({ navigation }) => {
+    //                 navigation.navigate("Camera");
+    //             }
+    //         }),
+    //     },
+    // }, {});
+    
+    // const Root = createStackNavigator({
+    //   Root: RootScreen,
+    //   Camera: CameraScreen,
+    // }, {
+    //         headerMode: 'none',
+    //         mode: 'modal',
+    //     });
+
+
 export default createTabNavigator(
   {
     home: {
       screen: HomeScene,
     },
-    list: {
+    search: {
       screen: SearchScreen,
     },
+    // search:  {
+    //   screen: SearchScreen,
+    //   navigationOptions: ({ navigation }) => ({
+    //       tabBarOnPress: ({ navigation }) => {
+    //           navigation.navigate("Search");
+    //       }
+    //   }),
+    // },
     map: {
       screen: BreweryMapScreen,
     },
@@ -103,7 +132,7 @@ export default createTabNavigator(
               iconName = 'home-outline'
               break;
             }
-            case 'list': {
+            case 'search': {
               iconName = 'search'
               return (
                 <MaterialIcons
