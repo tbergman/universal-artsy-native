@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Image, View, Button } from 'react-native';
+import { Platform, Image, View, Button, Text } from 'react-native';
 import { Constants } from 'expo';
 import { Ionicons, Foundation, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import {
@@ -121,14 +121,18 @@ const Tabs = createTabNavigator(
   }
 );
 
-
+const Screen = (props) => (
+  <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center' }}>
+    <Text>{props.title} Screen</Text>
+  </View>
+);
 
 /*
  * Place the search screen into a stack navigator so that we can easily use the existing header.
  */
 const SearchStack = createStackNavigator({
   Search: {
-    screen: SearchScreen,
+    screen: (props) => <Screen title="Search" {...props} />,
     navigationOptions: ({ navigation }) => ({
       headerTitle: 'Search',
       headerLeft: (
