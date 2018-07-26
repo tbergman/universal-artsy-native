@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Image, View } from 'react-native';
+import { Platform, Image, View, Button } from 'react-native';
 import { Constants } from 'expo';
 import { Ionicons, Foundation, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import {
@@ -25,93 +25,19 @@ import Layout from '../constants/Layout';
 // import SettingsScreen from '../screens/SettingsScreen';
 import SearchScreen from '../src/lib/Containers/SearchScreen';
 
-// const ListStack = createStackNavigator(
-//   {
-//     list: {
-//       screen: BreweryListScreen,
-//     },
-//     details: {
-//       screen: BreweryDetailsScreen,
-//     },
-//   },
-//   {
-//     headerMode: 'none',
-//     cardStyle: {
-//       backgroundColor: '#fff',
-//     },
-//   }
-// );
-
-/* const SettingsStack = createStackNavigator(
-  {
-    mainSettings: {
-      screen: SettingsScreen,
-    },
-  },
-  {
-    navigationOptions: {
-      title: 'Settings',
-      headerTitleStyle: {
-        fontFamily: 'OpenSans-Bold',
-        fontSize: 17,
-        letterSpacing: -0.5,
-        fontWeight: Platform.OS === 'android' ? '400' : 'normal',
-      },
-      headerStyle: {
-        backgroundColor: '#fff',
-        ...Platform.select({
-          android: {
-            paddingTop: Constants.statusBarHeight,
-            height: Header.HEIGHT + Constants.statusBarHeight,
-          },
-        }),
-      },
-    },
-  }
-); */
-
 const createTabNavigator =
   Platform.OS === 'ios'
     ? createBottomTabNavigator
     : createMaterialBottomTabNavigator;
 
-    // const RootScreen = createBottomTabNavigator({
-    //   explore: ExploreScreen,
-    //   camera:  {
-    //         screen: CameraScreen,
-    //         navigationOptions: ({ navigation }) => ({
-    //             tabBarOnPress: ({ navigation }) => {
-    //                 navigation.navigate("Camera");
-    //             }
-    //         }),
-    //     },
-    // }, {});
-    
-    // const Root = createStackNavigator({
-    //   Root: RootScreen,
-    //   Camera: CameraScreen,
-    // }, {
-    //         headerMode: 'none',
-    //         mode: 'modal',
-    //     });
-
-
-export default createTabNavigator(
+const Tabs = createTabNavigator(
   {
     home: {
       screen: HomeScene,
     },
-    search: {
+    Search: {
       screen: SearchScreen,
     },
-    // search:  {
-    //   screen: SearchScreen,
-    //   navigationOptions: ({ navigation }) => ({
-    //       tabBarOnPress: ({ navigation }) => {
-    //           navigation.navigate("Search");
-    //       }
-    //   }),
-    // },
     map: {
       screen: BreweryMapScreen,
     },
@@ -164,12 +90,76 @@ export default createTabNavigator(
             />
           )
         },
+        // tabBarOnPress: ({previousScene, scene, jumpToIndex }) => {
+        //   const isSearch = scene.route=== 'Search';
+        //   return isSearch 
+        //   ? navigation.navigate('SearchModal') 
+        //   : jumpToIndex(scene.index)
+        // },
+        tabBarOnPress: ({ navigation }) => {
+          console.log(navigation)
+          const isSearch = navigation.state.routeName === 'Search';
+          console.log(`is search ?:' ${isSearch}`)
+          console.log(`route name : ${navigation.state.routeName}`)
+          return isSearch 
+          ? navigation.navigate('SearchModal') 
+          : navigation.navigate(navigation.state.routeName) 
+        },
       };
     },
     shifting: false,
     labeled: false,
     activeTintColor: Colors.tabIconSelected,
     inactiveTintColor: Colors.tabIconDefault,
-    barStyle: { backgroundColor: 'white'}
+    barStyle: { backgroundColor: 'white'},
+    // tabBarOnPress: ({previousScene, scene, jumpToIndex }) => {
+    //   const isSearch = scene.route=== 'Search';
+    //   return isSearch 
+    //   ? navigation.navigate('SearchModal') 
+    //   : jumpToIndex(scene.index)
+    // }
   }
 );
+
+
+
+/*
+ * Place the search screen into a stack navigator so that we can easily use the existing header.
+ */
+const SearchStack = createStackNavigator({
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: 'Search',
+      headerLeft: (
+        <Button
+          title="Cancel"
+          // Note that since we're going back to a different navigator (CaptureStack -> RootStack)
+          // we need to pass `null` as an argument to goBack.
+          onPress={() => navigation.goBack(null)}
+        />
+      ),
+    }),
+  },
+})
+
+/*
+ * We need a root stack navigator with the mode set to modal so that we can open the capture screen
+ * as a modal. Defaults to the Tabs navigator.
+ */
+const RootStack = createStackNavigator({
+  Tabs: {
+    screen: Tabs,
+  },
+  SearchModal: {
+    screen: SearchStack,
+    navigationOptions: {
+      gesturesEnabled: false,
+    },
+  },
+}, {
+  headerMode: 'none',
+  mode: 'modal',
+});
+
+export default RootStack;
