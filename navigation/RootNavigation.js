@@ -14,6 +14,7 @@ import { capitalize } from 'lodash';
 import Images from '@assets/images';
 import HomeScene from "../src/lib/Scenes/Home"
 import FavoritesScene from "../src/lib/Scenes/Favorites"
+import ZeroStateInbox from "../src/lib/Components/Inbox/Conversations/ZeroStateInbox.tsx"
 // '/src/lib/Scenes/Home/index.tsx'
 
 import AuthenticationScreen from '../screens/AuthenticationScreen';
@@ -39,8 +40,8 @@ const Tabs = createTabNavigator(
     Search: {
       screen: View,
     },
-    map: {
-      screen: BreweryMapScreen,
+    messaging: {
+      screen: ZeroStateInbox,
     },
     favorites: {
       screen: FavoritesScene,
@@ -73,7 +74,7 @@ const Tabs = createTabNavigator(
                 />
               )
             }
-            case 'map': {
+            case 'messaging': {
               iconName = 'message-text-outline'
               break;
             }
@@ -123,44 +124,51 @@ const Tabs = createTabNavigator(
 );
 
 const Screen = (props) => (
-  <View style={{ flex: 1, backgroundColor: 'transparent', alignItems: 'center', justifyContent: 'center' }}>
-    <BlurView
-      style={{
-          flex: 1,
-          borderRadius: 12,
-          paddingBottom: 20,
-          justifyContent: "center",
-          alignItems: "center",
-          height: 500,
-          width: 500,
-          backgroundColor: 'transparent'
-      }}
-      tint="light" intensity={50}
-    >
-      <Text>{props.title} Screen</Text>
+  <BlurView
+  style={{
+      flex: 1,
+      borderRadius: 12,
+      paddingBottom: 20,
+      justifyContent: "center",
+      alignItems: "center",
+      height: 200,
+      width: 200,
+      backgroundColor: 'transparent'
+  }}
+  tint="light" intensity={50}
+>
+    <Text>{props.title} Screen</Text>
     </BlurView>
-  </View>
 );
 
 /*
  * Place the search screen into a stack navigator so that we can easily use the existing header.
  */
-const SearchStack = createStackNavigator({
-  Search: {
-    screen: (props) => <Screen title="Search" {...props} />,
-    navigationOptions: ({ navigation }) => ({
-      headerTitle: 'Search',
-      headerLeft: (
-        <Button
-          title="Cancel"
-          // Note that since we're going back to a different navigator (CaptureStack -> RootStack)
-          // we need to pass `null` as an argument to goBack.
-          onPress={() => navigation.goBack(null)}
-        />
-      ),
-    }),
-  },
-})
+// const SearchStack = createStackNavigator({
+//   Search: {
+//     screen: (props) => <Screen title="Search" {...props} />,
+//     navigationOptions: ({ navigation }) => ({
+//       headerTitle: 'Search',
+//       headerLeft: (
+//         <Button
+//           title="Cancel"
+//           // Note that since we're going back to a different navigator (CaptureStack -> RootStack)
+//           // we need to pass `null` as an argument to goBack.
+//           onPress={() => navigation.goBack(null)}
+//         />
+//       ),
+//     }),
+//   },
+// // }
+// //   {  
+// //     transitionConfig: () => ({
+// //       containerStyle: {
+// //           backgroundColor: 'red',
+// //           opacity: 0.5,
+// //       }
+// //     }),
+// //   }
+// })
 
 /*
  * We need a root stack navigator with the mode set to modal so that we can open the capture screen
@@ -171,7 +179,7 @@ const RootStack = createStackNavigator({
     screen: Tabs,
   },
   SearchModal: {
-    screen: SearchStack,
+    screen: (props) => <Screen title="Search" {...props} />,
     navigationOptions: {
       gesturesEnabled: false,
     },
@@ -180,7 +188,8 @@ const RootStack = createStackNavigator({
   headerMode: 'none',
   mode: 'modal',
   cardStyle: {
-    shadowColor: 'transparent'
+    shadowColor: 'transparent',
+    // opacity:0.99
   },
   // transitionConfig: {
   //   containerStyle: {
@@ -196,7 +205,8 @@ const RootStack = createStackNavigator({
   // },
   transitionConfig: () => ({
     containerStyle: {
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        // opacity: 0.5,
     }
   }),
 });
