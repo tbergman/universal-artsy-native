@@ -1,118 +1,94 @@
 import * as React from 'react';
-import { StyleSheet, View, Dimensions, Platform, Text } from 'react-native';
-// import { Modal, Text, Searchbar } from 'react-native-paper';
-import Modal from "react-native-modalbox";
-const { width, height } = Dimensions.get("window");
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { BlurView } from 'expo';
+import { SearchBar } from 'react-native-elements'
 
+// TODO: switch to SFC
 export default class SearchScreen extends React.Component {
-  state = {
-    visible: true,
-    firstQuery: '',
-  };
-
-  _showModal = () => this.setState({ visible: true });
-  _hideModal = () => this.setState({ visible: false });
-/* 
-  renderModal = () => {
-    let marginTop = height / 2 - 20;
-
-    // let BackgroundView = Platform.OS === "ios" ? BlurView : View;
-
-    return (
-        <Modal
-            style={{
-                backgroundColor:
-                    Platform.OS === "ios" ? "transparent" : "gray",
-                marginTop: marginTop,
-                height: 500,
-                width: 500,
-            }}
-            ref={ref => (this.modal = ref)}
-            coverScreen={true}
-            swipeArea={marginTop + 30}
-            backdropOpacity={0.0}
-            backdropPressToClose={true}
-            swipeToClose={true}
-        >
-            <BlurView
-                style={{
-                    flex: 1,
-                    borderRadius: 12,
-                    paddingBottom: marginTop,
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}
-                intensity={100}
-            >
-                <Text>ABCDEF</Text>   
-            </BlurView>
-        </Modal>
-    );
-}; */
 
   render() {
-    let marginTop = height / 2 - 20;
-    const { visible, firstQuery } = this.state;
+    const { goBack } = this.props.navigation;
+
     return (
-      <View style={styles.modal}>
-      <Modal
-          style={{
-              backgroundColor:
-                  Platform.OS === "ios" ? "transparent" : "gray",
-              marginTop: marginTop,
-              height: 500,
-              width: 500,
-          }}
-          ref={ref => (this.modal = ref)}
-          coverScreen={true}
-          swipeArea={marginTop + 30}
-          backdropOpacity={0.0}
-          backdropPressToClose={true}
-          swipeToClose={true}
-      >
-          <BlurView
-              style={{
-                  flex: 1,
-                  borderRadius: 12,
-                  paddingBottom: marginTop,
-                  justifyContent: "center",
-                  alignItems: "center"
-              }}
-              intensity={100}
+      <View style={styles.container}>
+      <BlurView tint="dark" intensity={100} style={styles.absoluteFill}>
+        <View style={styles.box}>
+          <SearchBar
+            onChangeText={() => {}}
+            onClearText={() => {}}
+
+            containerStyle={styles.searchBar}
+            inputStyle={styles.searchBarInput}
+            // TODO: show ClearIcon only when search is not empty
+            clearIcon={{color: 'white', name: 'cancel', style:{fontSize: 18, marginRight: -16 }}}
+            selectionColor='white'
+            icon={{type: 'material', color: 'white', name: 'search',
+            style: {transform: [{rotateY: '180deg'}], fontSize: 18, marginLeft: -16}
+           }}
+           placeholderTextColor= 'white'
+           autoFocus={true}
+          />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => goBack()}
+            hitSlop= {{top: 20, left: 20, bottom: 20, right: 20}}
           >
-              <Text>ABCDEF</Text>   
-          </BlurView>
-      </Modal>
+            <Text style={{color: 'white', opacity: 1, fontSize: 16}}>CLOSE</Text>
+          </TouchableOpacity>
+          </View>
+        <View style={{padding: 80, paddingTop: 140}}>
+          <Text style={{color: 'white', fontSize: 15}}>Search Artists, Artworks, Movements or Medium.</Text>
+        </View>
+        </BlurView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  modal: {
+  container: {
     flex: 1,
-    height: 600,
-  },
-  innerModal: {
-    justifyContent: 'center',
     alignItems: 'center',
-    // height: 600,
- /*    flex:1,
-    width: 500,
-    height: 500, */
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+    // opacity: 50
   },
-  blurView: {
-    // height: 600,
-/*     position: 'absolute',
+  box: {
+    width: 400,
+    height: 100,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  // transparent: {
+  //   backgroundColor: 'transparent',
+  // },
+  absoluteFill: {
+    position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
-    left: 0, */
+    left: 0,
+    // backgroundColor: 'black's
   },
-  textWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 500,
+  button:{
+    // backgroundColor: 'transparent',
+  },
+  searchBar: {
+    width: 280,
+    marginRight: 30,
+    borderTopWidth: 0,
+    backgroundColor: 'transparent',
+    borderBottomWidth: 1,
+    borderBottomColor: 'white',
+    // borderTopWidth: 0,
+  },
+  searchBarInput: {
+    color: 'white',
+    backgroundColor: 'transparent',
+    // paddingLeft: 20,
+    // marginLeft: 30,
+    // borderTopWidth: 0,
   }
 });
