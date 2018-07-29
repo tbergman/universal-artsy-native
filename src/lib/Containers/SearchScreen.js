@@ -36,8 +36,8 @@ export default class SearchScreen extends React.Component {
             <Text style={{color: 'white', opacity: 1, fontSize: 16}}>CLOSE</Text>
           </TouchableOpacity>
           </View>
-        <View style={{padding: 80, paddingTop: 140}}>
-          <Text style={{color: 'white', fontSize: 15}}>Search Artists, Artworks, Movements or Medium.</Text>
+        <View style={{padding: 100, paddingTop: 140}}>
+          <Text style={{color: 'white', fontSize: 16, lineHeight: 22}}>Search Artists, Artworks, Movements or Medium.</Text>
         </View>
         </BlurView>
       </View>
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.65)',
-    // opacity: 50
   },
   box: {
     width: 400,
@@ -61,16 +60,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'transparent',
   },
-  // transparent: {
-  //   backgroundColor: 'transparent',
-  // },
   absoluteFill: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
-    // backgroundColor: 'black's
   },
   button:{
     // backgroundColor: 'transparent',

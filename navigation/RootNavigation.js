@@ -37,7 +37,7 @@ const Tabs = createTabNavigator(
     home: {
       screen: HomeScene,
     },
-    Search: {
+    search: {
       screen: View,
     },
     messaging: {
@@ -54,6 +54,7 @@ const Tabs = createTabNavigator(
         title: '',
         tabBarIcon: ({ focused }) => {
           const { routeName } = navigation.state;
+          // console.log(routeName)
           let iconName
           switch (routeName) {
             case 'home': {
@@ -94,7 +95,7 @@ const Tabs = createTabNavigator(
         },
         tabBarOnPress: ({ navigation }) => {
           console.log(navigation)
-          const isSearch = navigation.state.routeName === 'Search';
+          const isSearch = navigation.state.routeName === 'search';
           console.log(`is search ?:' ${isSearch}`)
           console.log(`route name : ${navigation.state.routeName}`)
           return isSearch 
@@ -158,6 +159,9 @@ const Tabs = createTabNavigator(
 // //   }
 // })
 
+
+// Resource : https://snack.expo.io/HJTksiPVm
+// Transparent Modal
 // create custom transitioner without the opacity animation
 function forVertical(props) {
   const { layout, position, scene } = props;
@@ -195,7 +199,6 @@ const RootStack = createStackNavigator({
     shadowOpacity: 0,
     shadowRadius: 0,
   },
-
 });
 
 export default RootStack;
