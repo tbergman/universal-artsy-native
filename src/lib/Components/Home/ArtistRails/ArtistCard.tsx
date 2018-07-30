@@ -118,7 +118,9 @@ export class ArtistCard extends React.Component<Props, State> {
 
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+        <TouchableWithoutFeedback 
+          // onPress={this.handleTap.bind(this)}
+        >
           <View style={styles.touchableContainer}>
             <ImageView style={styles.image} imageURL={imageURL} />
             <View style={styles.textContainer}>{this.renderMetadata()}</View>

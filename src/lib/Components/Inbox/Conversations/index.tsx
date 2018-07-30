@@ -114,7 +114,7 @@ export class Conversations extends Component<Props, State> {
             return (
               <ConversationSnippet
                 conversation={item}
-                onSelected={() => SwitchBoard.presentNavigationViewController(this, `conversation/${item.id}`)}
+                // onSelected={() => SwitchBoard.presentNavigationViewController(this, `conversation/${item.id}`)}
               />
             )
           }}

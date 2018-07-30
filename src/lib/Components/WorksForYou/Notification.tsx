@@ -34,7 +34,9 @@ export class Notification extends React.Component<Props> {
 
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.handleArtistTap.bind(this)}>
+        <TouchableWithoutFeedback 
+          // onPress={this.handleArtistTap.bind(this)}
+        >
           <View style={styles.header}>
             {notification.image && (
               <Image source={{ uri: notification.image.resized.url }} style={styles.artistAvatar} />

@@ -17,17 +17,17 @@ it("renders properly", () => {
   expect(button).toMatchSnapshot()
 })
 
-describe("routing", () => {
-  it("calls the switchboard with the route", () => {
-    const button = new DarkNavigationButton({ title: "any", href: "/my/url" })
-    button.openLink()
-    expect(SwitchBoard.presentNavigationViewController).toBeCalledWith(button, "/my/url")
-  })
+// describe("routing", () => {
+//   it("calls the switchboard with the route", () => {
+//     const button = new DarkNavigationButton({ title: "any", href: "/my/url" })
+//     button.openLink()
+//     expect(SwitchBoard.presentNavigationViewController).toBeCalledWith(button, "/my/url")
+//   })
 
-  it("calls onPress in props, if passed instead", () => {
-    const myOnPress = jest.fn() as any
-    const button = new DarkNavigationButton({ title: "any", onPress: myOnPress })
-    button.openLink()
-    expect(myOnPress).toBeCalled()
-  })
-})
+//   it("calls onPress in props, if passed instead", () => {
+//     const myOnPress = jest.fn() as any
+//     const button = new DarkNavigationButton({ title: "any", onPress: myOnPress })
+//     button.openLink()
+//     expect(myOnPress).toBeCalled()
+//   })
+// })

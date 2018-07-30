@@ -133,7 +133,9 @@ class ActiveBid extends React.Component<Props, State> {
       : `${bid.sale_artwork.highest_bid.display} (${bidderPositionsLabel})`
 
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap}
+      >
         <Container>
           <Content>
             <ImageView imageURL={imageURL} />

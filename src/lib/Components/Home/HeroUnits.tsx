@@ -44,7 +44,7 @@ class HeroUnits extends React.Component<Props, State> {
     return (
       <TouchableHighlight
         key={heroUnit.__id}
-        onPress={() => this.handlePress(heroUnit)}
+        // onPress={() => this.handlePress(heroUnit)}
         underlayColor="black"
         style={{ marginLeft: 5, marginRight: 5, marginTop: 20, width, height }}
       >

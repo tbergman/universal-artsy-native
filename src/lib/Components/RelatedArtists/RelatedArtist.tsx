@@ -27,7 +27,9 @@ class RelatedArtist extends Component<Props> {
     const imageURL = artist.image && artist.image.url
 
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap.bind(this)}
+      >
         <View style={{ margin: 5, paddingBottom: 20, width: this.props.imageSize.width }}>
           <ImageView style={this.props.imageSize} imageURL={imageURL} />
           <Text style={styles.sansSerifText}>{artist.name.toUpperCase()}</Text>

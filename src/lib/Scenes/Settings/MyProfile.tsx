@@ -109,13 +109,13 @@ export class MyProfile extends React.Component<Props> {
           <ProfileButton
             section="Selling"
             description="Sell works from your collection"
-            onPress={startSubmission}
+            // onPress={startSubmission}
             isTop
           />
           <ProfileButton
             section="Account Details"
             description="Email, password reset, profile"
-            onPress={goToUserSettings}
+            // onPress={goToUserSettings}
             isTop={false}
           />
         </ButtonSection>

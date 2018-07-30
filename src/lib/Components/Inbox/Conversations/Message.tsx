@@ -141,7 +141,10 @@ export class Message extends React.Component<Props> {
     }
 
     return (
-      <Hyperlink onPress={this.onLinkPress.bind(this)} linkStyle={linkStyle}>
+      <Hyperlink 
+        // onPress={this.onLinkPress.bind(this)} 
+        linkStyle={linkStyle}
+      >
         <BodyText disabled={!isSent}>{body}</BodyText>
       </Hyperlink>
     )

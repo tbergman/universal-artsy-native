@@ -97,9 +97,9 @@ export class ArtworkCarousel extends Component<Props, State> {
         break
     }
 
-    if (url) {
-      SwitchBoard.presentNavigationViewController(this, url)
-    }
+    // if (url) {
+    //   SwitchBoard.presentNavigationViewController(this, url)
+    // }
   }
 
   geneQueryLink(rail) {

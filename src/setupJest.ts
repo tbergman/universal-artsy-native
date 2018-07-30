@@ -50,8 +50,8 @@ NativeModules.ARCocoaConstantsModule = {
   UIApplicationOpenSettingsURLString: "UIApplicationOpenSettingsURLString",
 }
 NativeModules.ARSwitchBoardModule = {
-  presentNavigationViewController: jest.fn(),
+  // presentNavigationViewController: jest.fn(),
   presentModalViewController: jest.fn(),
   presentMediaPreviewController: jest.fn(),
-  presentArtworksSet: jest.fn(),
+  // presentArtworksSet: jest.fn(),
 }

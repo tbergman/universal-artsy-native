@@ -96,7 +96,9 @@ export class SaleListItem extends React.Component<Props> {
     `
 
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap}
+      >
         <Container>
           <Image imageURL={image && image.url} />
           <Content>

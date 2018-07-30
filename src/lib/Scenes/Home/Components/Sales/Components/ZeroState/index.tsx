@@ -15,7 +15,7 @@ export class ZeroState extends React.Component<null> {
   render() {
     return (
       <WebView
-        onShouldStartLoadWithRequest={this.shouldLoadRequest}
+        // onShouldStartLoadWithRequest={this.shouldLoadRequest}
         source={require("./index.html")}
         style={{ flex: 1 }}
       />

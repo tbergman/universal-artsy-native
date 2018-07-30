@@ -60,7 +60,7 @@ export class Messages extends React.Component<Props, State> {
           artwork.href && (
             <ArtworkPreview
               artwork={artwork as any}
-              onSelected={() => ARSwitchBoard.presentNavigationViewController(this, artwork.href)}
+              // onSelected={() => ARSwitchBoard.presentNavigationViewController(this, artwork.href)}
             />
           )
         }
@@ -69,7 +69,7 @@ export class Messages extends React.Component<Props, State> {
           show.href && (
             <ShowPreview
               show={show as any}
-              onSelected={() => ARSwitchBoard.presentNavigationViewController(this, show.href)}
+              // onSelected={() => ARSwitchBoard.presentNavigationViewController(this, show.href)}
             />
           )
         }

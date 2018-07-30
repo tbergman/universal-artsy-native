@@ -32,7 +32,9 @@ class Artwork extends React.Component<Props, any> {
     const artwork = this.props.artwork
     const partnerName = this.props.artwork.partner && this.props.artwork.partner.name
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap.bind(this)}
+      >
         <View>
           <ImageView style={styles.image} aspectRatio={artwork.image.aspect_ratio} imageURL={artwork.image.url} />
           {this.artists()}

@@ -66,7 +66,9 @@ export default class SavedArtistRow extends React.Component<Props, null> {
     const imageURL = item.image && item.image.url
 
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap.bind(this)}
+      >
         <Container>
           <Content>
             <ImageContainer style={{ borderRadius: item.square_image ? 0 : 25 }}>

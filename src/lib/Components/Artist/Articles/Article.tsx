@@ -15,6 +15,7 @@ interface Props extends ViewProperties {
 
 class Article extends React.Component<Props> {
   handleTap() {
+    // TODO: port to RN
     SwitchBoard.presentNavigationViewController(this, this.props.article.href)
   }
 
@@ -24,7 +25,9 @@ class Article extends React.Component<Props> {
 
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+        <TouchableWithoutFeedback
+          // onPress={this.handleTap.bind(this)}
+        >
           <View style={styles.touchableContent}>
             <ImageView style={styles.image} imageURL={article.thumbnail_image.url} />
             <Text style={styles.serifText} numberOfLines={5}>

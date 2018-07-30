@@ -133,7 +133,7 @@ export default class Home extends React.Component<Props, State> {
 
         <DarkNavigationButton
           title="Sell works from your collection through Artsy"
-          onPress={this.openLink.bind(this)}
+          // onPress={this.openLink.bind(this)}
         />
       </View>
     )

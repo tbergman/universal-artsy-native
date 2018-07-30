@@ -62,7 +62,10 @@ export class FairsRail extends Component<Props, null> {
       }
 
       return (
-        <TouchableHighlight style={circleIconStyle} onPress={selectionHandler} key={fair.id}>
+        <TouchableHighlight style={circleIconStyle} 
+          // onPress={selectionHandler} 
+          key={fair.id}
+        >
           <TouchableWrapper>
             <ImageView style={circleIconStyle} imageURL={fair.mobile_image.url} placeholderBackgroundColor="white" />
           </TouchableWrapper>
