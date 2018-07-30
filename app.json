@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Artsy Expo",
-    "description": "Find breweries around you in Vancouver!",
-    "slug": "artsy-expo",
+    "name": "Universal Artsy",
+    "description": "Universal interface to art worldwide",
+    "slug": "universal-artsy",
     "sdkVersion": "27.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,7 +12,7 @@
     "icon": "./icon.png",
     "android": {
       "icon": "./icon-android.png",
-      "package": "adm.tbergman.artsyexpo",
+      "package": "adm.tbergman.universalartsy",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyD6TAyiTkI3nULh6-JhZJqRxJ0S734dw6E"
@@ -20,7 +20,7 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "adm.tbergman.artsyexpo"
+      "bundleIdentifier": "adm.tbergman.universalartsy"
     }
   }
 }
