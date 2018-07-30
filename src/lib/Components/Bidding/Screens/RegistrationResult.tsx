@@ -111,7 +111,9 @@ export class RegistrationResult extends React.Component<RegistrationResultProps,
               <Markdown mb={5}>{msg}</Markdown>
             </Flex>
           </View>
-          <BidGhostButton text="Continue" onPress={this.exitBidFlow} />
+          <BidGhostButton text="Continue" 
+            // onPress={this.exitBidFlow} 
+          />
         </Container>
       </BiddingThemeProvider>
     )

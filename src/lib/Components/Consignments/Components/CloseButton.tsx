@@ -9,7 +9,10 @@ export default class CloseButton extends React.Component<ViewProperties> {
 
   render() {
     return (
-      <BlackButton text="CLOSE" onPress={this.exitModal} style={Object.assign({ marginTop: 4 }, this.props.style)} />
+      <BlackButton text="CLOSE" 
+        // onPress={this.exitModal} 
+        style={Object.assign({ marginTop: 4 }, this.props.style)} 
+      />
     )
   }
 }

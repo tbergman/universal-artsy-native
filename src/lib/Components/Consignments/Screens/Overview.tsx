@@ -167,7 +167,7 @@ export default class Overview extends React.Component<Props, State> {
     this.props.navigator.push({ component: Confirmation, passProps: { submissionRequestValidationCheck } })
   }
 
-  exitModal = () => SwitchBoard.dismissModalViewController(this)
+  // exitModal = () => SwitchBoard.dismissModalViewController(this)
 
   uploadPhotosIfNeeded = async () => {
     const uploading = this.state.photos && this.state.photos.some(f => f.uploading)

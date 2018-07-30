@@ -42,17 +42,17 @@ function presentMediaPreviewController(
   ARSwitchBoardModule.presentMediaPreviewController(reactTag, route, mimeType, cacheKey)
 }
 
-function dismissModalViewController(component: React.Component<any, any>) {
-  let reactTag
-  try {
-    reactTag = findNodeHandle(component)
-  } catch (err) {
-    console.error(`Unable to find tag in dismissModalViewController: ${err.message}`)
-    return
-  }
+// function dismissModalViewController(component: React.Component<any, any>) {
+//   let reactTag
+//   try {
+//     reactTag = findNodeHandle(component)
+//   } catch (err) {
+//     console.error(`Unable to find tag in dismissModalViewController: ${err.message}`)
+//     return
+//   }
 
-  ARSwitchBoardModule.dismissModalViewController(reactTag)
-}
+//   ARSwitchBoardModule.dismissModalViewController(reactTag)
+// }
 
 // function presentArtworkSet(component: React.Component<any, any>, artworkIDs: string[], index: number) {
 //   let reactTag
@@ -70,6 +70,6 @@ export default {
   // presentNavigationViewController,
   presentMediaPreviewController,
   // presentModalViewController,
-  dismissModalViewController,
+  // dismissModalViewController,
   // presentArtworkSet,
 }

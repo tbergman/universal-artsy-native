@@ -4,9 +4,9 @@ import "react-native"
 import { getTextTree } from "lib/utils/getTestWrapper"
 import Confirmation, { SubmissionTypes } from "../Confirmation"
 
-jest.mock("lib/NativeModules/SwitchBoard", () => ({
-  dismissModalViewController: jest.fn(),
-}))
+// jest.mock("lib/NativeModules/SwitchBoard", () => ({
+//   dismissModalViewController: jest.fn(),
+// }))
 
 import SwitchBoard from "lib/NativeModules/SwitchBoard"
 
@@ -20,11 +20,11 @@ describe("callbacks", () => {
     expect(navigator.push).toHaveBeenCalled()
   })
 
-  it("dismisses modal when done is tapped", () => {
-    const confirmation = new Confirmation(emptyProps)
-    confirmation.exitModal()
-    expect(SwitchBoard.dismissModalViewController).toHaveBeenCalled()
-  })
+  // it("dismisses modal when done is tapped", () => {
+  //   const confirmation = new Confirmation(emptyProps)
+  //   confirmation.exitModal()
+  //   expect(SwitchBoard.dismissModalViewController).toHaveBeenCalled()
+  // })
 
   it("requests submission status after 1 second", () => {
     jest.useFakeTimers()

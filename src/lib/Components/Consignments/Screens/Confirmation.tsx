@@ -115,7 +115,9 @@ export default class Confirmation extends React.Component<Props, State> {
           <Subtitle>You will receive a confirmation email shortly.</Subtitle>
         </View>
         <ButtonView>
-          <Button text="DONE" onPress={this.exitModal} />
+          <Button text="DONE" 
+            // onPress={this.exitModal} 
+          />
         </ButtonView>
       </TextContainer>
     </View>
@@ -132,7 +134,9 @@ export default class Confirmation extends React.Component<Props, State> {
         </View>
         <ButtonView>
           <BorderedBlackButton text="TRY AGAIN" onPress={this.restart} />
-          <Button text="QUIT" onPress={this.exitModal} />
+          <Button text="QUIT" 
+            // onPress={this.exitModal} 
+          />
         </ButtonView>
       </TextContainer>
     </View>

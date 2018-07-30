@@ -131,7 +131,7 @@ export class Inquiry extends React.Component<Props, State> {
   }
 
   dismissModal() {
-    ARSwitchBoard.dismissModalViewController(this)
+    // ARSwitchBoard.dismissModalViewController(this)
   }
 
   @track(props => ({

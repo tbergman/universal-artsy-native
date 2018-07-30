@@ -58,13 +58,13 @@ export class BidResult extends React.Component<BidResultProps> {
     this.props.navigator.popToTop()
   }
 
-  exitBidFlow = async () => {
-    await SwitchBoard.dismissModalViewController(this)
+  // exitBidFlow = async () => {
+  //   await SwitchBoard.dismissModalViewController(this)
 
-    if (this.props.bidderPositionResult.status === "LIVE_BIDDING_STARTED") {
-      SwitchBoard.presentModalViewController(this, `/auction/${this.props.sale_artwork.sale.id}`)
-    }
-  }
+  //   if (this.props.bidderPositionResult.status === "LIVE_BIDDING_STARTED") {
+  //     SwitchBoard.presentModalViewController(this, `/auction/${this.props.sale_artwork.sale.id}`)
+  //   }
+  // }
 
   render() {
     const { sale_artwork, bidderPositionResult } = this.props
