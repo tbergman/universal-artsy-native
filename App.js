@@ -7,7 +7,8 @@ import { List } from 'immutable';
 
 import Actions from './state/Actions';
 import AllBreweries from './data';
-import AuthenticationScreen from './screens/AuthenticationScreen';
+// import AuthenticationScreen from './screens/AuthenticationScreen';
+import AuthenticationScreen from './src/lib/Containers/Authentication';
 import ImageGalleryPortal from './components/ImageGalleryPortal';
 import LocalStorage from './state/LocalStorage';
 import RootNavigation from './navigation/RootNavigation';
@@ -84,13 +85,15 @@ class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        {isSignedIn(this.props.currentUser) ? (
+        {
+          isSignedIn(this.props.currentUser) ? (
           <RootNavigation
             persistenceKey={__DEV__ ? 'navigation-state' : null}
           />
         ) : (
           <AuthenticationScreen />
-        )}
+        )
+      }
         <ImageGalleryPortal />
       </View>
     );

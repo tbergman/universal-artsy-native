@@ -22,9 +22,13 @@ export default class AuthenticationScreen extends React.Component {
             marginBottom: 30,
           }}
           resizeMode="contain"
-          source={require("../assets/images/logo.png")}
+          source={require("../assets/images/Artsy_Logo.png")}
         />
-        <TouchableNativeFeedback onPress={this._signInWithFacebook} style={styles.facebookButton}>
+        <TouchableNativeFeedback 
+          // TODO: activate facebook login
+          // onPress={this._signInWithFacebook} 
+          style={styles.facebookButton}
+        >
           <RegularText style={styles.facebookButtonText}>Sign in with Facebook</RegularText>
         </TouchableNativeFeedback>
 
@@ -64,27 +68,30 @@ export default class AuthenticationScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "black"
   },
   facebookButton: {
     backgroundColor: "#3b5998",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 25,
     alignItems: "center",
     borderRadius: 5,
-    width: 250,
+    width: 210,
+    marginTop: 110,
   },
   guestButton: {
     marginTop: 15,
-    backgroundColor: "#eee",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    backgroundColor: "black",
+    paddingVertical: 10,
+    paddingHorizontal: 25,
     borderRadius: 5,
+    borderTopColor: "white",
     alignItems: "center",
-    width: 250,
+    width: 210,
   },
   facebookButtonText: {
     fontSize: 15,
@@ -92,6 +99,6 @@ const styles = StyleSheet.create({
   },
   guestButtonText: {
     fontSize: 15,
-    color: "rgba(0,0,0,0.9)",
+    color: "rgba(255,255,255,0.9)",
   },
 })
