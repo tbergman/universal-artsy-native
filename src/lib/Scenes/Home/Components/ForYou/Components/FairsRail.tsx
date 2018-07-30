@@ -12,6 +12,7 @@ import { FairsRail_fairs_module } from "__generated__/FairsRail_fairs_module.gra
 
 const Container = styled.View`
   margin-bottom: 15;
+  margin-top: 15;
 `
 
 const Title = styled(SectionTitle)`
