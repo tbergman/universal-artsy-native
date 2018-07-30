@@ -170,7 +170,8 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
     const artworks = this.artworksConnection() ? this.artworksConnection().edges : []
     const allArtworkIDs = artworks.map(a => a.node.id)
     const index = allArtworkIDs.indexOf(artworkID)
-    SwitchBoard.presentArtworkSet(this, allArtworkIDs, index)
+    // TODO: port to react-navigation
+    // SwitchBoard.presentArtworkSet(this, allArtworkIDs, index)
   }
 
   onLayout = (event: LayoutChangeEvent) => {
@@ -243,7 +244,7 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
           <Artwork
             artwork={artwork as any}
             key={"artwork-" + j + "-" + artwork.__id}
-            onPress={this.tappedOnArtwork.bind(this)}
+            // onPress={this.tappedOnArtwork.bind(this)}
           />
         )
         // Setting a marginBottom on the artwork component didn’t work, so using a spacer view instead.

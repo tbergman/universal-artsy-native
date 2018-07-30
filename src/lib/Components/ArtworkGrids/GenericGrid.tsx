@@ -39,7 +39,8 @@ class GenericArtworksGrid extends React.Component<Props, State> {
   tappedOnArtwork = (artworkID: string) => {
     const allArtworkIDs = this.props.artworks.map(a => a.id)
     const index = allArtworkIDs.indexOf(artworkID)
-    SwitchBoard.presentArtworkSet(this, allArtworkIDs, index)
+    // TODO: port to React-navigation
+    // SwitchBoard.presentArtworkSet(this, allArtworkIDs, index)
   }
 
   layoutState(currentLayout): State {
@@ -121,7 +122,9 @@ class GenericArtworksGrid extends React.Component<Props, State> {
       for (let j = 0; j < artworks.length; j++) {
         const artwork = artworks[j]
         artworkComponents.push(
-          <Artwork artwork={artwork} key={artwork.__id + i + j} onPress={this.tappedOnArtwork.bind(this)} />
+          <Artwork artwork={artwork} key={artwork.__id + i + j} 
+          // onPress={this.tappedOnArtwork.bind(this)} 
+          />
         )
         if (j < artworks.length - 1) {
           artworkComponents.push(<View style={spacerStyle} key={"spacer-" + j} accessibilityLabel="Spacer View" />)
