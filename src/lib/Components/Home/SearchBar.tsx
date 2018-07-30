@@ -11,7 +11,9 @@ const leftInnerMargin = Dimensions.get("window").width > 700 ? 20 : 15
 export default class SearchBar extends React.Component<any, any> {
   render() {
     return (
-      <TouchableWithoutFeedback onPress={this.handleTap.bind(this)}>
+      <TouchableWithoutFeedback 
+        // onPress={this.handleTap.bind(this)}
+      >
         <View style={styles.container}>
           <Image style={styles.searchIcon} source={require("../../../../images/SearchButton.png")} />
           <Text style={styles.text}>Search for artists and artworks...</Text>

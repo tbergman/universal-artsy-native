@@ -436,7 +436,11 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
               <Flex alignItems="center">
                 <Serif14 mt={2} color="black60">
                   You agree to{" "}
-                  <LinkText onPress={() => this.onConditionsOfSaleLinkPressed()}>Conditions of Sale</LinkText>
+                  <LinkText 
+                    // onPress={() => this.onConditionsOfSaleLinkPressed()}
+                  >
+                    Conditions of Sale
+                  </LinkText>
                   .
                 </Serif14>
               </Flex>

@@ -23,7 +23,10 @@ const rules = {
       }
 
       return (
-        <LinkText key={state.key} onPress={() => openUrl(node.target)} ref={el => (element = el)}>
+        <LinkText key={state.key} 
+          // onPress={() => openUrl(node.target)} 
+          ref={el => (element = el)}
+        >
           {output(node.content, state)}
         </LinkText>
       )

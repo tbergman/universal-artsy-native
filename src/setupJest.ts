@@ -51,7 +51,7 @@ NativeModules.ARCocoaConstantsModule = {
 }
 NativeModules.ARSwitchBoardModule = {
   // presentNavigationViewController: jest.fn(),
-  presentModalViewController: jest.fn(),
+  // presentModalViewController: jest.fn(),
   presentMediaPreviewController: jest.fn(),
   // presentArtworksSet: jest.fn(),
 }

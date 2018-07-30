@@ -13,17 +13,17 @@ const { ARSwitchBoardModule } = NativeModules
 //   ARSwitchBoardModule.presentNavigationViewController(reactTag, route)
 // }
 
-function presentModalViewController(component: React.Component<any, any>, route: string) {
-  let reactTag
-  try {
-    reactTag = findNodeHandle(component)
-  } catch (err) {
-    console.error(`Unable to find tag in presentModalViewController: ${err.message}`)
-    return
-  }
+// function presentModalViewController(component: React.Component<any, any>, route: string) {
+//   let reactTag
+//   try {
+//     reactTag = findNodeHandle(component)
+//   } catch (err) {
+//     console.error(`Unable to find tag in presentModalViewController: ${err.message}`)
+//     return
+//   }
 
-  ARSwitchBoardModule.presentModalViewController(reactTag, route)
-}
+//   ARSwitchBoardModule.presentModalViewController(reactTag, route)
+// }
 
 function presentMediaPreviewController(
   component: React.Component<any, any>,
@@ -69,7 +69,7 @@ function dismissModalViewController(component: React.Component<any, any>) {
 export default {
   // presentNavigationViewController,
   presentMediaPreviewController,
-  presentModalViewController,
+  // presentModalViewController,
   dismissModalViewController,
   // presentArtworkSet,
 }

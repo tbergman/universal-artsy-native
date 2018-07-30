@@ -275,7 +275,11 @@ export class Registration extends React.Component<RegistrationProps, Registratio
           <View>
             <Checkbox mb={4} justifyContent="center" onPress={() => this.conditionsOfSalePressed()}>
               <Serif14 mt={2} color="black60">
-                Agree to <LinkText onPress={this.onPressConditionsOfSale}>Conditions of Sale</LinkText>.
+                Agree to <LinkText 
+                  // onPress={this.onPressConditionsOfSale}
+                >
+                  Conditions of Sale
+                </LinkText>.
               </Serif14>
             </Checkbox>
 

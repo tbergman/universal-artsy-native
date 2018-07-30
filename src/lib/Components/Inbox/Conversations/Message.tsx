@@ -182,7 +182,7 @@ export class Message extends React.Component<Props> {
               <PreviewContainer>
                 <InvoicePreview
                   invoice={message.invoice as any}
-                  onSelected={previewInvoice}
+                  // onSelected={previewInvoice}
                   conversationId={conversationId}
                 />
               </PreviewContainer>

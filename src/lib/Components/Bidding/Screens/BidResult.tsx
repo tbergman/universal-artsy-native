@@ -94,7 +94,10 @@ export class BidResult extends React.Component<BidResultProps> {
           {this.canBidAgain(status) ? (
             <Button text="Bid again" onPress={() => this.onPressBidAgain()} />
           ) : (
-            <BidGhostButton text="Continue" onPress={this.exitBidFlow} />
+            <BidGhostButton 
+              text="Continue" 
+              // onPress={this.exitBidFlow}
+            />
           )}
         </Container>
       </BiddingThemeProvider>
