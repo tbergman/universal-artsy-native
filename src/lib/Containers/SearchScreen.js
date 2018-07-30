@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent',
+    paddingLeft: 30,
   },
   absoluteFill: {
     position: 'absolute',
@@ -71,8 +72,10 @@ const styles = StyleSheet.create({
     // backgroundColor: 'transparent',
   },
   searchBar: {
-    width: 280,
+    // width: 230,
+    flexGrow: 1,
     marginRight: 30,
+    // marginLeft: 30,
     borderTopWidth: 0,
     backgroundColor: 'transparent',
     borderBottomWidth: 1,

@@ -23,7 +23,7 @@ const BackgroundView = styled.View`
 
 const Text = styled.Text`
   font-family: "${Fonts.GaramondRegular}";
-  font-size: 19;
+  font-size: 15;
   color: ${Colors.White};
 `
 
