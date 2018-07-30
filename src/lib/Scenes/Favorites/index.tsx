@@ -71,7 +71,7 @@ class Favorites extends React.Component<Props, null> {
             <CategoriesRenderer render={renderWithLoadProgress(Categories)} />
           </Tab>
         </ScrollableTabView>
-        {isStaging && <DarkNavigationButton title="Warning: on staging, favourites don't migrate" />}
+        {/* {isStaging && <DarkNavigationButton title="Warning: on staging, favourites don't migrate" />} */}
       </View>
     )
   }
