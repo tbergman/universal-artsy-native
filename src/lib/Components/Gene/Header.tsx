@@ -27,13 +27,13 @@ class Header extends React.Component<Props, State> {
   state = { following: null }
 
   componentDidMount() {
-    NativeModules.ARTemporaryAPIModule.followStatusForGene(this.props.gene._id, (error, following) => {
-      if (error) {
-        // FIXME: Handle error
-        console.error("Gene/Header.tsx", error.message)
-      }
-      this.setState({ following })
-    })
+    // NativeModules.ARTemporaryAPIModule.followStatusForGene(this.props.gene._id, (error, following) => {
+    //   if (error) {
+    //     // FIXME: Handle error
+    //     console.error("Gene/Header.tsx", error.message)
+    //   }
+    //   this.setState({ following })
+    // })
   }
 
   render() {
@@ -102,7 +102,7 @@ class Header extends React.Component<Props, State> {
           <InvertedButton
             text={this.state.following ? "Following" : "Follow"}
             selected={this.state.following}
-            onPress={this.handleFollowChange.bind(this)}
+            // onPress={this.handleFollowChange.bind(this)}
           />
         </View>
       )

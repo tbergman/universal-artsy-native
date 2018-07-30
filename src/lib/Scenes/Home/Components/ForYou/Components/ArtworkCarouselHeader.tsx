@@ -91,7 +91,7 @@ class ArtworkCarouselHeader extends Component<Props, State> {
           <Button
             text={this.state.following ? "Following" : "Follow"}
             selected={this.state.following}
-            onPress={this.handleFollowChange.bind(this)}
+            // onPress={this.handleFollowChange.bind(this)}
           />
         </View>
       )

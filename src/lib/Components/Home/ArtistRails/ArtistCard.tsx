@@ -128,7 +128,7 @@ export class ArtistCard extends React.Component<Props, State> {
               <InvertedButton
                 text={this.state.following ? "Following" : "Follow"}
                 selected={this.state.following}
-                onPress={this.handleFollowChange}
+                // onPress={this.handleFollowChange}
                 inProgress={this.state.processingChange}
                 onSelectionAnimationFinished={selectionAnimationFinishedHandler}
               />

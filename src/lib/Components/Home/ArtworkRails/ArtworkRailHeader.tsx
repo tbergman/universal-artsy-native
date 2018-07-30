@@ -82,7 +82,7 @@ class ArtworkRailHeader extends React.Component<Props, State> {
           <Button
             text={this.state.following ? "Following" : "Follow"}
             selected={this.state.following}
-            onPress={this.handleFollowChange}
+            // onPress={this.handleFollowChange}
           />
         </View>
       )
