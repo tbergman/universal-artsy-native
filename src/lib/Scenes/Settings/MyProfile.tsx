@@ -77,8 +77,11 @@ const Header: React.SFC<{ me: MyProfile_me }> = ({ me }) => (
  * ---------------
  */
 
-const ProfileButton = ({ section, description, isTop, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={{ width: 330 }}>
+const ProfileButton = ({ section, description, isTop, /* onPress */ }) => (
+  <TouchableOpacity 
+    // onPress={onPress}
+    style={{ width: 330 }}
+  >
     <View>
       {isTop && <Separator />}
       <ButtonSectionText>{section.toUpperCase()}</ButtonSectionText>
@@ -99,8 +102,8 @@ export class MyProfile extends React.Component<Props> {
     // const commonPadding = windowDimensions.width > 700 ? 40 : 20
     // const goToConsignmentsOverview = () => SwitchBoard.presentNavigationViewController(this, Router.SellingOverview)
 
-    const startSubmission = () => SwitchBoard.presentModalViewController(this, Router.ConsignmentsStartSubmission)
-    const goToUserSettings = () => SwitchBoard.presentNavigationViewController(this, Router.UserSettingsiOS)
+    // const startSubmission = () => SwitchBoard.presentModalViewController(this, Router.ConsignmentsStartSubmission)
+    // const goToUserSettings = () => SwitchBoard.presentNavigationViewController(this, Router.UserSettingsiOS)
 
     return (
       <ScrollView scrollsToTop={true} automaticallyAdjustContentInsets={false}>
