@@ -106,14 +106,18 @@ export class Message extends React.Component<Props> {
       if (attachment.content_type.startsWith("image")) {
         return (
           <PreviewContainer key={attachment.id}>
-            <ImagePreview attachment={attachment as any} onSelected={previewAttachment} />
+            <ImagePreview attachment={attachment as any} 
+              // onSelected={previewAttachment} 
+            />
           </PreviewContainer>
         )
       }
       if (attachment.content_type === "application/pdf") {
         return (
           <PreviewContainer key={attachment.id}>
-            <PDFPreview attachment={attachment as any} onSelected={previewAttachment} />
+            <PDFPreview attachment={attachment as any} 
+              // onSelected={previewAttachment} 
+            />
           </PreviewContainer>
         )
       }
