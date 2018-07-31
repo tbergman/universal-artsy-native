@@ -1,6 +1,6 @@
 import { AppLoading, Font } from 'expo';
 import React from 'react';
-import { StyleSheet, View, AsyncStorage } from 'react-native';
+import { StyleSheet, View, AsyncStorage, I18nManager } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Provider as ReduxProvider, connect } from 'react-redux';
 import { List } from 'immutable';
@@ -14,6 +14,10 @@ import LocalStorage from './state/LocalStorage';
 import RootNavigation from './navigation/RootNavigation';
 import Store from './state/Store';
 import { Brewery, User } from './state/Records';
+import { Updates } from 'expo'
+
+I18nManager.forceRTL(false);
+I18nManager.allowRTL(false);
 
 export default class AppContainer extends React.Component {
   render() {
@@ -39,6 +43,8 @@ class App extends React.Component {
 
   componentDidMount(){
     AsyncStorage.clear();
+    I18nManager.forceRTL(false);
+    I18nManager.allowRTL(false);
   }
 
   _loadAssetsAsync = async () => {
