@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.65)',
   },
   box: {
-    width: 400,
+    // width: 300,
     height: 100,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent',
-    paddingLeft: 30,
+    paddingHorizontal: 20,
   },
   absoluteFill: {
     position: 'absolute',
@@ -69,12 +69,13 @@ const styles = StyleSheet.create({
     left: 0,
   },
   button:{
+    // paddingRight: 20,
     // backgroundColor: 'transparent',
   },
   searchBar: {
     // width: 230,
     flexGrow: 1,
-    marginRight: 30,
+    marginRight: 20,
     // marginLeft: 30,
     borderTopWidth: 0,
     backgroundColor: 'transparent',
