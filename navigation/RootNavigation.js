@@ -20,7 +20,7 @@ import ZeroStateInbox from "../src/lib/Components/Inbox/Conversations/ZeroStateI
 import AuthenticationScreen from '../screens/AuthenticationScreen';
 // import BreweryDetailsScreen from '../screens/BreweryDetailsScreen';
 // import BreweryListScreen from '../screens/BreweryListScreen';
-import BreweryMapScreen from '../screens/BreweryMapScreen';
+// import BreweryMapScreen from '../screens/BreweryMapScreen';
 import Colors from '../constants/Colors';
 import Layout from '../constants/Layout';
 // import SettingsScreen from '../screens/SettingsScreen';

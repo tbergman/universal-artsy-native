@@ -1,9 +1,4 @@
 {
-  "engines": {
-    "node": "8.4.x",
-    "npm": "6.1.x",
-    "yarn": "1.x"
-  },
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
@@ -66,12 +61,13 @@
     "prop-types": "^15.5.10",
     "query-string": "^4.1.0",
     "react": "16.3.1",
-    "react-native": "0.55.4",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "react-native-blur": "^3.2.2",
     "react-native-elements": "^0.19.1",
     "react-native-fade-in-image": "^1.4.1",
     "react-native-hyperlink": "0.0.11",
     "react-native-modalbox": "^1.6.0",
+    "react-native-navigation": "^2.0.2638",
     "react-native-paper": "^2.0.0-alpha.7",
     "react-native-parallax-scroll-view": "https://github.com/orta/react-native-parallax-scroll-view",
     "react-native-root-modal": "^2.0.0",
